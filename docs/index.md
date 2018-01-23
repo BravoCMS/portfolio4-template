@@ -1,5 +1,6 @@
-
-# Welcome to the bravosell template wiki!
+---
+title: Welcome to the bravosell template guide
+---
 
 Template uses smarty syntax. [Smarty Documentation](https://www.smarty.net/docs/en/).
 
