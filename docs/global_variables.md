@@ -1,8 +1,8 @@
 ---
-title: Welcome to the bravosell template guide
+title: Global variables
 ---
 
-Global variables are initialized in all(pages, tags) templates
+# Global variables are initialized in all(pages, tags) templates
 
 ## `$site` - global website settings
 
@@ -56,3 +56,5 @@ Global variables are initialized in all(pages, tags) templates
 
 
 ## `$user` - global current user data
+
+[Home](index.md).

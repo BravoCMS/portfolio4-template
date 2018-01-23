@@ -1,5 +1,5 @@
 ---
-title: Welcome to the bravosell template guide
+title: Module variables
 ---
 
 # Text module
@@ -7,3 +7,5 @@ title: Welcome to the bravosell template guide
 `$module.name` - `string` page header value
 
 `$module.text` - `string` page content value
+
+[Home](index.md).
