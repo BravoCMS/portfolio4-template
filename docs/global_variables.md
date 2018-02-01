@@ -54,7 +54,16 @@ title: Global variables
 
 
 
-
 ## `$user` - global current user data
+
+
+
+## `$is_web_admin` - `bool` whether user came from admin panel, and should see management tools
+
+
+
+## `$__tf` - `string` if template folder is in use, it contains its name
+
+
 
 [Home](index.md).
