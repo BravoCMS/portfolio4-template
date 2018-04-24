@@ -104,9 +104,8 @@ jQuery(function ($) {
     });
 
     if ($('.social-widget-link').length) {
-        $('.footer').append($('<div class="footer-social-icons hidden"><i class="fa fa-facebook"></i><i class="fa fa-instagram"></i><i class="fa fa-vk"></i><i class="fa fa-pinterest"></i><i class="fa fa-twitter"></i><i class="fa fa-heart"></i><i class="fa fa-google-plus"></i><i class="fa fa-tumblr"></i><i class="fa fa-linkedin"></i></div>'));
         $('.social-widget-link a').each(function () {
-            $(this).append($('.footer-social-icons .fa-' + $(this).attr('data-soc-id')));
+            $(this).append($('.footer-social-icons .fa-' + $(this).attr('id')));
             $(this).wrap('<li class="social_icon_' + ($(this).index() + 1) + '" />');
         });
         $('.follow-links').prepend($('.social-widget-link'));
