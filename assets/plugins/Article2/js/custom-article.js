@@ -1291,7 +1291,7 @@ jQuery(function ($) {
 
 
 // redactor youtube
-jQuery(document).on('ready', function () {
+jQuery(document).ready(function () {
     if (jQuery('.tag-youtube-block').length) {  
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
