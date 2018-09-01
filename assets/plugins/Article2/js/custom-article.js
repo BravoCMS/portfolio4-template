@@ -16,7 +16,7 @@ jQuery(function ($) {
         $(this).parent().wrap('<div class="lb-container' + ($(this).hasClass('la-section--fullWidth') ? ' la-container--fullWidth' : '') + '" />');
     });
 
-    $(document).on('ready', function () {
+    $(document).ready(function () {
         if ($('.header-between-of-horizontal-lines').length) {
             $('.header-between-of-horizontal-lines h1').each(function(index, el) {
                 $(this).wrapInner('<span class="h-text" />');
