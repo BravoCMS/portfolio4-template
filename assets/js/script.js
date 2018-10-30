@@ -294,12 +294,12 @@ jQuery(function ($) {
             $('.cover-image').height(winHeight);
 
             var anchors = [];
-            $('#cover-slider .view-project a').each(function () {
+            $('#cover-slider .view-project a').each(function (index) {
                 var anchor = $(this).attr('href').slice(1, -1);
                 anchor = anchor.split('/');
                 anchor = anchor[anchor.length - 1]
                 anchor = anchor.slice(0, -6);
-                anchors.push(anchor);
+                anchors.push(anchor || 'album' + index);
             });
 
             $('#cover-slider').fullpage({
