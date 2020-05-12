@@ -16,7 +16,6 @@ jQuery(function ($) {
                         activeImageLogoClass = data.settings.type_logo == 'image' ? ' active' : '',
                         selectedTextLogoClass = data.settings.type_logo == 'text' ? ' selected="selected"' : '',
                         selectedImageLogoClass = data.settings.type_logo == 'image' ? ' selected="selected"' : '';
-
                     $('body').append(
                         '<div class="popup change-logo">'+
                             '<div class="popup__container">'+
