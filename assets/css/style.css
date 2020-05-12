@@ -37,6 +37,27 @@ body:not(.has-fullpage) .body_bottom {
     overflow: hidden;
 }
 
+/* pagination */
+.pagination {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.pagination li {
+    padding: 5px;
+    margin: 0 2px;
+}
+.pagination li .page-link {
+    font-size: 19px;
+    font-weight: bold;
+    color: #222;
+}
+.pagination li.active .page-link {
+    color: #d6af59;
+}
 .light { 
 	font-family: "Open Sans", Helvetica, Arial, sans-serif !important; 
 	font-style: normal; 
