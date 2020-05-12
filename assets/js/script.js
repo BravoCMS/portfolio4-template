@@ -282,8 +282,8 @@ jQuery(function ($) {
     });
 
 
-
-    $(window).on('load', function () {
+    loadPage();
+    function loadPage () {
         var winWidth = $(window).width(),
                 winHeight = $(window).height();
 
@@ -548,7 +548,9 @@ jQuery(function ($) {
                 }
             });
         }
+    };
 
+    $("img").last().on("load", function() {
         $('.article_details.article_details_news.full .img-slider').each(function (index) {
             var slideList = [],
                     slideImgSrc = [];
@@ -557,25 +559,23 @@ jQuery(function ($) {
                 slideList.push($(this).html());
                 slideImgSrc.push($(this).find('img').attr('src'));
             });
-
             var newSlideListHtml = "";
             for (var i = 0; i < slideList.length; i++) {
                 newSlideListHtml += slideList[i];
             }
-
             $(this).before(
-                    '<div class="img-list-wrapper img-slider new-img-slider swiper-container swiper-container-' + index + '">' +
-                    '<ul class="img-list swiper-wrapper swiper-wrapper-' + index + '">' +
-                    newSlideListHtml +
-                    '</ul>' +
-                    '<div class="swiper-pagination swiper-pagination-' + index + '"></div>' +
-                    '<div class="swiper-button-next swiper-button-next-' + index + '"></div>' +
-                    '<div class="swiper-button-prev swiper-button-prev-' + index + '"></div>' +
-                    '</div>'
-                    );
-
+                '<div class="img-list-wrapper img-slider new-img-slider swiper-container swiper-container-' + index + '">' +
+                '<ul class="img-list swiper-wrapper swiper-wrapper-' + index + '">' +
+                newSlideListHtml +
+                '</ul>' +
+                '<div class="swiper-pagination swiper-pagination-' + index + '"></div>' +
+                '<div class="swiper-button-next swiper-button-next-' + index + '"></div>' +
+                '<div class="swiper-button-prev swiper-button-prev-' + index + '"></div>' +
+                '</div>'
+            );
+    
             $(this).remove();
-
+    
             var swiper = new Swiper('.swiper-container-' + index, {
                 pagination: '.swiper-pagination-' + index,
                 paginationClickable: true,
@@ -584,9 +584,9 @@ jQuery(function ($) {
                 spaceBetween: 30,
                 observer: true
             });
-
+    
             $('.swiper-pagination-' + index).after('<div class="new-swiper-pagination new-swiper-pagination-' + index + '"></div>');
-
+    
             $('.swiper-pagination-' + index + ' .swiper-pagination-bullet').each(function (indexSlide) {
                 $(this).clone().addClass('new-swiper-pagination-bullet').removeClass('swiper-pagination-bullet').appendTo($('.new-swiper-pagination-' + index));
             });
@@ -607,11 +607,8 @@ jQuery(function ($) {
             if ($('.new-swiper-pagination-' + index + ' .new-swiper-pagination-bullet').length > 4) {
                 $('.new-swiper-pagination-' + index).addClass('mobile-hide');
             }
-        });
-    });
-
-
-
+        });    
+    })
 
     $(window).on('scroll', function () {
         var winWidth = $(window).width(),

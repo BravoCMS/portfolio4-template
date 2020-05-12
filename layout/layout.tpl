@@ -76,7 +76,7 @@
 
     <script type="text/javascript" src="<{file 'assets/plugins/jquery.shapeshift.js'}>"></script>
     <script type="text/javascript" src="<{file 'assets/js/script.js'}>"></script>
-
+    
     <{if $is_web_admin}>
     <script type="text/javascript" src="<{file 'assets/js/web-admin.js'}>"></script>
     <link href="<{file 'assets/edit/edit.css'}>" rel="stylesheet" type="text/css" />

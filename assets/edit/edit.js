@@ -2,7 +2,7 @@ jQuery(function ($) {
     console.log('can edit');
 
     // edit
-    $(window).on('load', function () {
+    // $(window).on('load', function () {
         // change logo api
         $('<a class="change-logo-btn"><i class="material-icons">mode_edit</i></a>').on('click', function (e) {
             e.preventDefault();
@@ -422,5 +422,5 @@ jQuery(function ($) {
             });
         }).appendTo('.menu-item a');
 
-    });
+    // });
 });
