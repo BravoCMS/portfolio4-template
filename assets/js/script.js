@@ -332,7 +332,6 @@ jQuery(function ($) {
    
 
     $(document).ready(function() {
-        console.log($(this));
         if ( $('.article_details.article_details_news.full .img-preview').length ) {
             console.log(winWidth);
             $('.img-preview').each(function () {
@@ -927,4 +926,5 @@ jQuery(function ($) {
             initPhotoSwipeFromDOM('.photoswipe-slider');
         });
     }
+    $(window).resize();
 });
