@@ -332,7 +332,8 @@ jQuery(function ($) {
    
     $("#handler_img").ready(function() {
         console.log("is load")
-        $(window).trigger("resize");
+
+      
         $('.article_details.article_details_news.full .img-slider').each(function (index) {
             var slideList = [],
                     slideImgSrc = [];
@@ -391,228 +392,233 @@ jQuery(function ($) {
             }
         });
 
-        if ( $('.img-preview').length ) {
-            console.log(winWidth);
-            $('.img-preview').each(function () {
-                if (winWidth > 767) {
-                    if ($(this).closest('.images-2-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 2,
-                            minColumns: 2
-                        });
-                    } else if ($(this).closest('.images-3-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 3,
-                            minColumns: 3
-                        });
-                    } else if ($(this).closest('.images-5-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 5,
-                            minColumns: 5
-                        });
-                    } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 4,
-                            minColumns: 4
-                        });
+        setTimeout(function(){
+            $(window).trigger("resize");
+            if ( $('.img-preview').length ) {
+                console.log(winWidth);
+                $('.img-preview').each(function () {
+                    if (winWidth > 767) {
+                        if ($(this).closest('.images-2-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 2,
+                                minColumns: 2
+                            });
+                        } else if ($(this).closest('.images-3-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 3,
+                                minColumns: 3
+                            });
+                        } else if ($(this).closest('.images-5-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 5,
+                                minColumns: 5
+                            });
+                        } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 4,
+                                minColumns: 4
+                            });
+                        }
+                    } else if (winWidth > 567) {
+                        if ($(this).closest('.images-2-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 2,
+                                minColumns: 2
+                            });
+                        } else if ($(this).closest('.images-3-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 3,
+                                minColumns: 3
+                            });
+                        } else if ($(this).closest('.images-5-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 4,
+                                minColumns: 4
+                            });
+                        } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 4,
+                                minColumns: 4
+                            });
+                        }
+                    } else if (winWidth > 480) {
+                        if ($(this).closest('.images-2-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 2,
+                                minColumns: 2
+                            });
+                        } else if ($(this).closest('.images-3-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 3,
+                                minColumns: 3
+                            });
+                        } else if ($(this).closest('.images-5-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 3,
+                                minColumns: 3
+                            });
+                        } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 3,
+                                minColumns: 3
+                            });
+                        }
+                    } else {
+                        if ($(this).closest('.images-2-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 2,
+                                minColumns: 2
+                            });
+                        } else if ($(this).closest('.images-3-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 2,
+                                minColumns: 2
+                            });
+                        } else if ($(this).closest('.images-5-per-line').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 2,
+                                minColumns: 2
+                            });
+                        } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
+                            $(this).find('.photoswipe-slider').shapeshift({
+                                autoHeight: true,
+                                enableDrag: false,
+                                enableCrossDrop: false,
+                                align: 'left',
+                                gutterX: 0,
+                                gutterY: 0,
+                                paddingX: 0,
+                                paddingY: 0,
+                                columns: 2,
+                                minColumns: 2
+                            });
+                        }
                     }
-                } else if (winWidth > 567) {
-                    if ($(this).closest('.images-2-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 2,
-                            minColumns: 2
-                        });
-                    } else if ($(this).closest('.images-3-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 3,
-                            minColumns: 3
-                        });
-                    } else if ($(this).closest('.images-5-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 4,
-                            minColumns: 4
-                        });
-                    } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 4,
-                            minColumns: 4
-                        });
-                    }
-                } else if (winWidth > 480) {
-                    if ($(this).closest('.images-2-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 2,
-                            minColumns: 2
-                        });
-                    } else if ($(this).closest('.images-3-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 3,
-                            minColumns: 3
-                        });
-                    } else if ($(this).closest('.images-5-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 3,
-                            minColumns: 3
-                        });
-                    } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 3,
-                            minColumns: 3
-                        });
-                    }
-                } else {
-                    if ($(this).closest('.images-2-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 2,
-                            minColumns: 2
-                        });
-                    } else if ($(this).closest('.images-3-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 2,
-                            minColumns: 2
-                        });
-                    } else if ($(this).closest('.images-5-per-line').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 2,
-                            minColumns: 2
-                        });
-                    } else if (!$(this).closest('.gallery-hard-line-2').length && !$(this).closest('.gallery-hard-line-3').length && !$(this).closest('.gallery-hard-line-4').length) {
-                        $(this).find('.photoswipe-slider').shapeshift({
-                            autoHeight: true,
-                            enableDrag: false,
-                            enableCrossDrop: false,
-                            align: 'left',
-                            gutterX: 0,
-                            gutterY: 0,
-                            paddingX: 0,
-                            paddingY: 0,
-                            columns: 2,
-                            minColumns: 2
-                        });
-                    }
-                }
-            });
-        };
+                });
+            };
+        }, 300)
+
+
     })
 
     $(window).on('scroll', function () {
