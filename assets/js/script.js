@@ -327,6 +327,10 @@ jQuery(function ($) {
             }
         }
 
+ 
+    };
+
+    $("img").last().on("load", function() {
         if ($('.article_details.article_details_news.full .img-preview').length) {
             $('.img-preview').each(function () {
                 if (winWidth > 767) {
@@ -548,9 +552,7 @@ jQuery(function ($) {
                 }
             });
         }
-    };
 
-    $("img").last().on("load", function() {
         $('.article_details.article_details_news.full .img-slider').each(function (index) {
             var slideList = [],
                     slideImgSrc = [];
