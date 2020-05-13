@@ -332,6 +332,7 @@ jQuery(function ($) {
    
     $("#handler_img").ready(function() {
         console.log("is load")
+        $(window).trigger("resize");
         $('.article_details.article_details_news.full .img-slider').each(function (index) {
             var slideList = [],
                     slideImgSrc = [];
@@ -653,6 +654,7 @@ jQuery(function ($) {
 
 
     $(window).on('resize', function () {
+        console.log("resized");
         var winWidth = $(window).width(),
                 winHeight = $(window).height();
 
