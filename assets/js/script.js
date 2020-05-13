@@ -334,6 +334,7 @@ jQuery(function ($) {
     $(document).ready(function() {
         console.log($(this));
         if ( $('.article_details.article_details_news.full .img-preview').length ) {
+            console.log(winWidth);
             $('.img-preview').each(function () {
                 if (winWidth > 767) {
                     if ($(this).closest('.images-2-per-line').length) {
