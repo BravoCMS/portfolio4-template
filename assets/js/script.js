@@ -331,7 +331,8 @@ jQuery(function ($) {
     };
 
     $("img").last().on("load", function() {
-        if ($('.article_details.article_details_news.full .img-preview').length) {
+
+        if ( $('.img-preview').length ) {
             $('.img-preview').each(function () {
                 if (winWidth > 767) {
                     if ($(this).closest('.images-2-per-line').length) {
@@ -551,7 +552,7 @@ jQuery(function ($) {
                     }
                 }
             });
-        }
+        };
 
         $('.article_details.article_details_news.full .img-slider').each(function (index) {
             var slideList = [],
@@ -609,13 +610,14 @@ jQuery(function ($) {
             if ($('.new-swiper-pagination-' + index + ' .new-swiper-pagination-bullet').length > 4) {
                 $('.new-swiper-pagination-' + index).addClass('mobile-hide');
             }
-        });    
-    })
+        });
+
+    });
 
     $(window).on('scroll', function () {
         var winWidth = $(window).width(),
-                winHeight = $(window).height(),
-                scrollVal = $(window).scrollTop();
+            winHeight = $(window).height(),
+            scrollVal = $(window).scrollTop();
 
         if ($('.block_conteiner_wrp').length) {
             if (scrollVal < $('.block_conteiner_wrp').offset().top - $('header').outerHeight()) {
