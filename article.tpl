@@ -29,4 +29,5 @@
             </article>
         </div>
     </div>
+    <img id="handler_img" src="<{$article.cover.photo_file}>" alt="$article.cover.photo_title}>">
 <{/block}>
