@@ -3,6 +3,9 @@ jQuery(function ($) {
             winHeight = $(window).height(),
             scrollVal = $(window).scrollTop();
 
+    if (window.location.pathname === "/") {
+        $("footer").addClass("main_footer");
+    }
     $('.language-active').on('click', function () {
         $('.block_language').slideToggle();
     });

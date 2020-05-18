@@ -251,11 +251,13 @@
 
         <footer class="footer">
             <{custom_code "footer"}>
-
             <div class="footer_container">
                 <div class="copyright">
-                    <p class="copyright_link"><{$site.name|htmlspecialchars}></p>
+                    <p class="copyright_link"><{$page.name|htmlspecialchars}></p>
                     <p class="copyright_year">© <span class="year"><{$site.date_founded}> - <{0|as_date:"Y"}></span></p>
+                </div>
+                <div class="main_who_make">
+                    <a href="http://artweb.red/" title="создание сайтов портфолио для фотографов, художников, моделей, дизайнеров и всех творческих людей">Создано на платформе artweb.red</a>
                 </div>
                 <div class="who_make">
                     <a href="http://artweb.red/" title="создание сайтов портфолио для фотографов, художников, моделей, дизайнеров и всех творческих людей">Создано на платформе</a>

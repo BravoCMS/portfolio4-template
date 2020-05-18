@@ -1002,6 +1002,9 @@ body.open-nav #fullscreen-menu .menu-inner nav ul li {
 	float: left;
     line-height: 1;
 }
+.main_who_make {
+    display: none;
+}
 .copyright p {
 	display: inline-block;
 	vertical-align: top;
@@ -2295,12 +2298,6 @@ form .label {
         display: block !important;
     }
 }
-
-
-
-
-
-
 @media (max-width: 1400px) {
 	#center .albums-list a {
         height: 325px;
@@ -2312,6 +2309,28 @@ form .label {
     }
 }
 @media (max-width: 767px) {
+    .main_footer {
+        background: transparent;
+        font-size: 10px;
+        line-height: 22px;
+        color: #909299 !important;
+    }
+    .main_footer .copyright,
+    .main_footer .who_make {
+        display: none;
+    }
+    .main_footer .main_who_make {
+        display: block;
+    }
+    .main_footer .main_who_make a {
+        font-size: 12px;
+    }
+    .main_footer a,
+    .main_footer p {
+        color: #909299 !important;
+        line-height: 14px;
+        opacity: 0.75;
+    }
 	.another-projects .album {
 		width: 33.333%;
 	}
