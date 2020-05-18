@@ -29,5 +29,5 @@
             </article>
         </div>
     </div>
-    <img id="handler_img" src="<{$article.cover.photo_file}>" alt="$article.cover.photo_title}>">
+    <img id="handler_img" src="<{$article.cover.photo_file}>" alt="$article.cover.photo_title}>" style="width: 0; height: 0; visibility: hidden;">
 <{/block}>

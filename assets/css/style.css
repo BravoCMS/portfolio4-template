@@ -71,9 +71,9 @@ input {
 	font-weight: 400;
 }
 #handler_img {
-    width: 0;
-    height: 0;
-    visibility: hidden;
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
 }
 .regular { 
 	font-family: "Open Sans", Helvetica, Arial, sans-serif !important; 
