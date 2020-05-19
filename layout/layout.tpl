@@ -253,7 +253,7 @@
             <{custom_code "footer"}>
             <div class="footer_container">
                 <div class="copyright">
-                    <p class="copyright_link"><{$page.name|htmlspecialchars}></p>
+                    <p class="copyright_link"><{$site.name|htmlspecialchars}></p>
                     <p class="copyright_year">© <span class="year"><{$site.date_founded}> - <{0|as_date:"Y"}></span></p>
                 </div>
                 <div class="main_who_make">
