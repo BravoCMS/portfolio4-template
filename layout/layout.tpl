@@ -204,7 +204,8 @@
                                 <div class="logo twenty">
                                     <a class="logo" href="<{$site.home_url}>">
                                         <{if $site.logo.type === 'image'}>
-                                            <img src="<{$site.logo.image}>" />
+                                            <div class="logo_img" style="background: url(<{$site.logo.image}>) no-repeat left / contain">
+                                            </div>
                                         <{else}>
                                             <span class="text-logo">
                                                 <{$site.logo.text|htmlspecialchars}>
