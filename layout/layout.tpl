@@ -128,9 +128,10 @@
                     <div class="row">
                         <div class="span12 navbar-inner">
                             <div class="logo twenty">
-                                <a class="logo" href="<{$site.home_url}>">
+                                <a class="logo" href="<{$site.home_url}>" >
                                     <{if $site.logo.type === 'image'}>
-                                        <img src="<{$site.logo.image}>" />
+                                        <div class="logo_img" style="background: url(<{$site.logo.image}>) no-repeat left / contain">
+                                        </div>
                                     <{else}>
                                         <div class="text-logo">
                                             <{$site.logo.text|htmlspecialchars}>

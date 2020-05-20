@@ -911,13 +911,14 @@ header {
 header #navbar a.logo {
 	display: table-cell;
 	height: 63px;
-	width: 1px;
+	width: 100%;
 	padding: 4px 0;
 	vertical-align: middle;
 	line-height: 0;
 }
-header a.logo img {
-	max-height: 100%;
+header a.logo .logo_img {
+    height: 100%;
+    width: 150px;
 }
 .fullscreen-cover {
 	opacity: 1;
