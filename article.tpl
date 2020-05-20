@@ -20,7 +20,7 @@
 
             <span class="article_full_img_block">
                 <span class="article_full_img">
-                    <img src="<{$article.cover.photo_file}>" alt="<{$article.cover.photo_title}>">
+                    <img src="<{$article.cover.photo_file}>" alt="<{if $article.cover.photo_title}><{$article.cover.photo_title}><{else}>Обложка <{$article.name|htmlspecialchars}><{/if}>">
                 </span>
             </span>
 
