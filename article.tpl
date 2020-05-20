@@ -20,7 +20,7 @@
 
             <span class="article_full_img_block">
                 <span class="article_full_img">
-                    <img src="<{$article.cover.photo_file}>" alt="$article.cover.photo_title}>">
+                    <img src="<{$article.cover.photo_file}>" alt="<{$article.cover.photo_title}>">
                 </span>
             </span>
 
@@ -29,5 +29,6 @@
             </article>
         </div>
     </div>
-    <img id="handler_img" src="<{$article.cover.photo_file}>" alt="<{$article.cover.photo_title}>" style="width: 0; height: 0; visibility: hidden;">
+    
+    <img id="handler_img" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" style="width: 0; height: 0; visibility: hidden;">
 <{/block}>
