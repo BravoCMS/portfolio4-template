@@ -922,6 +922,7 @@ header a.logo .logo_img {
 header .logo_center {
     display: flex;
     justify-content: center;
+    margin-left: 15px;
 }
 .fullscreen-cover {
 	opacity: 1;
