@@ -918,7 +918,10 @@ header #navbar a.logo {
 }
 header a.logo .logo_img {
     height: 100%;
-    width: 150px;
+}
+header .logo_center {
+    display: flex;
+    justify-content: center;
 }
 .fullscreen-cover {
 	opacity: 1;
