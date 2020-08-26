@@ -129,7 +129,7 @@
                                 <a class="logo" href="<{$site.home_url}>" >
                                     <{if $site.logo.type === 'image'}>
                                         <div class="logo_img">
-                                            <img src="<{$site.logo.image}>" alt="" style="max-height: 100%;">
+                                            <img src="<{$site.logo.image}>" alt="">
                                         </div>
                                     <{else}>
                                         <div class="text-logo">
@@ -199,11 +199,12 @@
                 <div id="navbar">
                     <div class="container">
                         <div class="row">
-                            <div class="span12 navbar-inner">
+                            <div class="span12 navbar-inner <{if $template.template_customization.logo_position == 'center'}>logo_center<{/if}>">
                                 <div class="logo twenty">
                                     <a class="logo" href="<{$site.home_url}>">
                                         <{if $site.logo.type === 'image'}>
-                                            <div class="logo_img" style="background: url(<{$site.logo.image}>) no-repeat left / contain">
+                                            <div class="logo_img">
+                                                <img src="<{$site.logo.image}>" alt="">
                                             </div>
                                         <{else}>
                                             <span class="text-logo">

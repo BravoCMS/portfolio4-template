@@ -156,11 +156,11 @@ jQuery(function ($) {
                 'background-position': '0 0'
             });
         }
-        if (scrollVal < winHeight - $('header').outerHeight()) {
-            $('header').addClass('c-transparent');
-        } else {
-            $('header').removeClass('c-transparent');
-        }
+        // if (scrollVal < winHeight - $('header').outerHeight()) {
+        //     $('header').addClass('c-transparent');
+        // } else {
+        //     $('header').removeClass('c-transparent');
+        // }
         $('.article_details.text').prepend($('.selected_filters_left'));
     }
 

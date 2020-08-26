@@ -178,7 +178,7 @@ jQuery(function ($) {
                                 if (typeof response.error === 'undefined') {
                                     // window.location.reload();
                                     if (response.settings.type_logo == 'image') {
-                                        $('a.logo').html('<img src="'+response.settings.logo+'">');
+                                        $('a.logo').html('<img src="'+response.settings.logo+'" style="max-height: 55px">');
                                     } else {
                                         $('a.logo').html(
                                             '<div class="text-logo">'+response.settings.text_logo+'</div>'+
