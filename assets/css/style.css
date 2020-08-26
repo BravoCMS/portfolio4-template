@@ -924,7 +924,13 @@ header .logo_center {
     justify-content: center;
     margin-left: 15px;
 }
+header .span12 {
+    margin-left: 15px;
+}
 header .logo_center a.logo .logo_img img {
+    max-height: 55px;
+}
+header a.logo .logo_img img {
     max-height: 55px;
 }
 .fullscreen-cover {

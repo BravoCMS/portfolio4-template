@@ -199,7 +199,7 @@
                 <div id="navbar">
                     <div class="container">
                         <div class="row">
-                            <div class="span12 navbar-inner <{if $template.template_customization.logo_position == 'center'}>logo_center<{/if}>">
+                            <div class="span12 navbar-inner <{if $template.template_customization.logo_position == 'center'}>logo_center<{/if}>" style="margin-left: 24px;">
                                 <div class="logo twenty">
                                     <a class="logo" href="<{$site.home_url}>">
                                         <{if $site.logo.type === 'image'}>
