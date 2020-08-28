@@ -933,6 +933,11 @@ header .logo_center a.logo .logo_img img {
 header a.logo .logo_img img {
     max-height: 55px;
 }
+.who_make span {
+    letter-spacing: 1.5px;
+    color: #f93642;
+    font-size: 17px;
+}
 .fullscreen-cover {
 	opacity: 1;
 }
@@ -1036,8 +1041,8 @@ body.open-nav #fullscreen-menu .menu-inner nav ul li {
 .footer .who_make a:first-child {
     display: block;
     text-align: right;
-    padding-right: 120px;
-    background: url(pic/Artweb-logo.png) right center no-repeat;
+    /* padding-right: 120px;
+    background: url(pic/Artweb-logo.png) right center no-repeat; */
     -webkit-background-size: 116px 13px;
     background-size: 116px 13px;
     min-width: 146px;

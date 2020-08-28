@@ -262,8 +262,9 @@
                     <a href="http://artweb.red/" title="создание сайтов портфолио для фотографов, художников, моделей, дизайнеров и всех творческих людей">Создано на платформе artweb.red</a>
                 </div>
                 <div class="who_make">
-                    <a href="http://artweb.red/" title="создание сайтов портфолио для фотографов, художников, моделей, дизайнеров и всех творческих людей">Создано на платформе</a>
+                    <{powered_by 'store'}>
                 </div>
+                
 
                 <div class="counters">
                     <{custom_code "counters"}>
