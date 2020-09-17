@@ -6,15 +6,10 @@
 <{/block}>
 
 <{block name="head" append}>
-    <meta property="og:title" content="<{$article.name}>"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:image" content="http://1041.admin.artweb.red<{$article.cover.photo_file_small}>"/>
-    <meta property="og:image:type" content="image/jpeg/png"/>
+    <meta property="og:image" content="<{absolute_url $article.cover.photo_file_small}>"/>
     <meta property="og:image:width" content="<{$article.cover.photo_small_width}>" />
     <meta property="og:image:height" content="<{$article.cover.photo_small_height}>" />
-    <meta property="og:image:alt" content="<{$article.cover.photo_title}>"/>
-    <meta property="og:description" content="<{$article.description}>"/>
-    <meta property="og:url" content="<{$article.absolute_url}>"/>
+    <meta property="og:image:alt" content="<{if $article.cover.photo_title}><{$article.cover.photo_title}><{else}>Обложка <{$article.name|htmlspecialchars}><{/if}>"/>
 <{/block}>
 
 <{block name=title}>
