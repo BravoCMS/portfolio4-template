@@ -1,4 +1,4 @@
-
+// JsAdminSV
 jQuery(function ($) {
     var winWidth = document.body.clientWidth,
         winHeight = document.body.clientHeight,
@@ -167,24 +167,6 @@ jQuery(function ($) {
             }
         }
 
-
-        // redactor gallery
-        if ($('.img-list-wrapper.img-gallery').length) {
-            $('.img-list-wrapper.img-gallery img').each(function () {
-                if ($(this).attr("src-original")) {
-                    $(this).attr({"src": $(this).attr("src-original")});
-                }
-            });
-
-            if ($('.appearing-with-a-delay-photo-in-gallery-1').length) {
-                $('.appearing-with-a-delay-photo-in-gallery-1 .img-gallery li').each(function() {
-                    if ($(this).offset().top < scrollVal + winHeight - 100) {
-                        $(this).addClass('show-photo');
-                    }
-                });
-            }
-        }
-
         // redactor swiper
         if ($('.img-list-wrapper.img-slider').length) {
             $('.img-list-wrapper.img-slider img').each(function () {
@@ -192,28 +174,65 @@ jQuery(function ($) {
                     $(this).attr({"src": $(this).attr("src-original")});
                 }
             });
-
+// 
             $('.img-list-wrapper.img-slider').each(function(index) {
+                var slideList = [],
+                slideImgSrc = [];
+// 
                 $(this).addClass('swiper-container swiper-container-'+index);
                 $(this).find('.img-list').addClass('swiper-wrapper');
                 $(this).find('.img-list li').addClass('swiper-slide');
+// 
+                $(this).find('.swiper-slide:not(.swiper-slide-duplicate)').each(function () {
+                    $(this).wrapInner('<li class="swiper-slide" />');
+                    slideList.push($(this).html());
+                    slideImgSrc.push($(this).find('img').attr('src'));
+                    });
+// 
                 $(this).append(
                     '<div class="swiper-pagination swiper-pagination-'+index+'"></div>'+
                     '<div class="swiper-button-next swiper-button-next-'+index+'"></div>'+
                     '<div class="swiper-button-prev swiper-button-prev-'+index+'"></div>'
                 );
+
+                var newSlideListHtml = "";
+                for (var i = 0; i < slideList.length; i++) {
+                  newSlideListHtml += slideList[i];
+                }
+
                 var sliderEffect = 'slide';
                 if ($(this).closest('.la-block').hasClass('transfusion-photo-slider-animation')) {
                     sliderEffect = 'fade';
                 } else if ($(this).closest('.la-block').hasClass('carousel-photo-slider-animation')) {
                     sliderEffect = 'slide';
                 }
+
+                $(this).before(
+                    '<div class="img-list-wrapper img-slider new-img-slider swiper-container swiper-container-'+index+'">'+
+                    '<ul class="img-list swiper-wrapper swiper-wrapper-'+index+'">'+
+                    newSlideListHtml+
+                    '</ul>'+
+                    '<div class="swiper-pagination swiper-pagination-'+index+'"></div>'+
+                    '<div class="swiper-button-next swiper-button-next-'+index+'"></div>'+
+                    '<div class="swiper-button-prev swiper-button-prev-'+index+'"></div>'+
+                    '</div>'
+                  );
+            
+                  $(this).remove();
+
                 var swiper = new Swiper('.swiper-container-'+index, {
-                    pagination: '.swiper-pagination-'+index,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                        clickable: true
+                      },
                     nextButton: '.swiper-button-next-'+index,
                     prevButton: '.swiper-button-prev-'+index,
                     slidesPerView: 1,
-                    paginationClickable: true,
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                      },
                     spaceBetween: 30,
                     loop: true,
                     centeredSlides: true,
@@ -221,6 +240,34 @@ jQuery(function ($) {
                     autoplayDisableOnInteraction: false,
                     effect: sliderEffect
                 });
+                $('.swiper-pagination-'+index).after('<div class="new-swiper-pagination new-swiper-pagination-'+index+'"></div>');
+      
+      // setTimeout(function () {
+      $('.swiper-pagination-'+index+' .swiper-pagination-bullet').each(function (indexSlide) {
+        $(this).clone().addClass('new-swiper-pagination-bullet').removeClass('swiper-pagination-bullet').appendTo($('.new-swiper-pagination-'+index));
+        // $(this).css({
+        //   "background": "url("+slideImgSrc[indexSlide]+") center center no-repeat",
+        //   "background-size": "cover"
+        // });
+      });
+      // },1000);
+      $('.new-swiper-pagination-'+index+' .new-swiper-pagination-bullet').each(function (indexPagination) {
+        if ($(this).hasClass('swiper-pagination-bullet-active')) {
+          $(this).removeClass('swiper-pagination-bullet-active').addClass('new-swiper-pagination-bullet-active')
+        }
+        $(this).css({
+          "background": "url("+slideImgSrc[indexPagination]+") center center no-repeat",
+          "background-size": "cover"
+        });
+        $(this).on('click', function () {
+          $('.swiper-pagination-'+index+' .swiper-pagination-bullet:nth-child('+(indexPagination+1)+')').trigger('click');
+          $(this).parent().find('.new-swiper-pagination-bullet-active').removeClass('new-swiper-pagination-bullet-active');
+          $(this).addClass('new-swiper-pagination-bullet-active');
+        });
+      });
+      if ($('.new-swiper-pagination-'+index+' .new-swiper-pagination-bullet').length > 4) {
+        $('.new-swiper-pagination-'+index).addClass('mobile-hide');
+      }
             });
         }
 
@@ -265,7 +312,6 @@ jQuery(function ($) {
                     url: url,
                     dataType: "jsonp",
                     success: function (data) {
-                        // console.log(data);
                         var photos = data.response.items;
                         if (urlUserInfo) {
                             getVkUser(urlUserInfo, block, type, photos, typeSearch);
@@ -287,7 +333,6 @@ jQuery(function ($) {
                     url: url,
                     dataType: "jsonp",
                     success: function (data) {
-                        // console.log(data);
                         var user = data.response[0];
                         if (type == 'preview') {
                             createVkPhotoPreview(block, photos, user, typeSearch);
@@ -321,7 +366,6 @@ jQuery(function ($) {
                     url: url,
                     dataType: "jsonp",
                     success: function (data) {
-                        // console.log(data);
                         var autor = data.response[0];
                         html += '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">';
                         html += '<a href="'+src+'" itemprop="contentUrl" data-size="'+fofoSize+'">';
@@ -387,7 +431,6 @@ jQuery(function ($) {
                     url: url,
                     dataType: "jsonp",
                     success: function (data) {
-                        // console.log(data);
                         var autor = data.response[0];
                         html += '<div class="vk-img">';
                         html += '<div class="vk-info">';
@@ -453,7 +496,6 @@ jQuery(function ($) {
                     url: url,
                     dataType: "jsonp",
                     success: function (data) {
-                        // console.log(data);
                         var autor = data.response[0];
                         html += '<div class="swiper-slide">';
                         html += '<div class="swiper-slide-block">';
@@ -964,8 +1006,18 @@ jQuery(function ($) {
                 $.ajax({
                     url: dataLink,
                     success:function(data){
-                        var logo = data.match(/"profile_pic_url":"([^"]+)"/)[1],
-                            followers = data.match(/"followed_by":{"count":([0-9]+)}/)[1];
+                        var data_image = data.slice(data.indexOf('property="og:image" content="'))
+                        var sub_data_image = data_image.slice(0, data_image.indexOf('/>')).split('"')
+                        var logo =  sub_data_image ? 
+                                    sub_data_image[3] ?
+                                    sub_data_image[3] :
+                        		    '' :
+                        		    '',
+                            followers = data.match(/"edge_followed_by":{"count":([0-9]+)}/) ? 
+                            			data.match(/"edge_followed_by":{"count":([0-9]+)}/)[1] ?
+                            			data.match(/"edge_followed_by":{"count":([0-9]+)}/)[1] :
+                            			'' :
+                            			'';
 
                         if (followers.length > 3) {
                             followers = followers.split('');
@@ -1193,22 +1245,6 @@ jQuery(function ($) {
         }
     });
 
-    $(window).on('scroll', function () {
-        var winWidth = document.body.clientWidth,
-            winHeight = document.body.clientHeight,
-            scrollVal = $(window).scrollTop();
-
-        // redactor gallery
-        if ($('.img-list-wrapper.img-gallery').length) {
-            if ($('.appearing-with-a-delay-photo-in-gallery-1').length) {
-                $('.appearing-with-a-delay-photo-in-gallery-1 .img-gallery li').each(function() {
-                    if ($(this).offset().top < scrollVal + winHeight -100) {
-                        $(this).addClass('show-photo');
-                    }
-                });
-            }
-        }
-    });
 
     $(window).on('resize', function () {
         var winWidth = document.body.clientWidth,
@@ -1291,7 +1327,7 @@ jQuery(function ($) {
 
 
 // redactor youtube
-jQuery(document).ready(function () {
+jQuery(function($) {
     if (jQuery('.tag-youtube-block').length) {  
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
@@ -1370,7 +1406,6 @@ function getVideoByURL (url, block, type, playerVars, channelSettings, videoInfo
         url: url,
         dataType: "jsonp",
         success: function (data) {
-            // console.log(data.items);
             var playerItems = data.items,
                 urlСhannel = 'https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,brandingSettings&id='+data.items[0].snippet.channelId+'&key=AIzaSyD02UAe16jkW_z2__v6DRJ280cHTIh7CZw';
             if (type == 'channel') {
@@ -1390,7 +1425,6 @@ function getСhannelInfo (urlСhannel, block, channelSettings) {
         url: urlСhannel,
         dataType: "jsonp",
         success: function (data) {
-            // console.log(data);
             var html = '',
                 logo = data.items[0].snippet.thumbnails.high ? data.items[0].snippet.thumbnails.high.url : data.items[0].snippet.thumbnails.medium ? data.items[0].snippet.thumbnails.medium.url : data.items[0].snippet.thumbnails.default.url,
                 hasLogo = channelSettings.logo ? ' youtube-channel-has-logo' : '';
@@ -1473,7 +1507,6 @@ function createYouTubePlayer (playerId, videoId, playerVars, videoInfo, channelS
             url: 'https://www.googleapis.com/youtube/v3/videos?part=statistics&id='+videoId+'&maxResults=1&key=AIzaSyD02UAe16jkW_z2__v6DRJ280cHTIh7CZw',
             dataType: "jsonp",
             success: function (data) {
-                // console.log(data);
                 var viewCountArr = data.items[0].statistics.viewCount.split(''),
                     viewCount = '';
                 for (var i = viewCountArr.length - 1, j = 1; i >= 0; i--) {
@@ -1530,7 +1563,6 @@ function createYouTubePlayer (playerId, videoId, playerVars, videoInfo, channelS
             url: 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id='+videoId+'&maxResults=1&key=AIzaSyD02UAe16jkW_z2__v6DRJ280cHTIh7CZw',
             dataType: "jsonp",
             success: function (data) {
-                // console.log(data);
                 var urlСhannel = 'https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,brandingSettings&id='+data.items[0].snippet.channelId+'&key=AIzaSyD02UAe16jkW_z2__v6DRJ280cHTIh7CZw';
                 getСhannelInfo(urlСhannel, block, channelSettings);
             }
