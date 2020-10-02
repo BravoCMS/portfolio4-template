@@ -1018,8 +1018,20 @@ jQuery(function ($) {
                             			data.match(/"edge_followed_by":{"count":([0-9]+)}/)[1] :
                             			'' :
                             			'';
+                        if (followers.length > 6) {
+                            followers = followers.split('');
 
-                        if (followers.length > 3) {
+                            var flw = '';
+                            for (var i = 0; i < followers.length-6; i++) {
+                                flw += followers[i];
+                            }
+
+                            if (followers[followers.length-6] == '0') {
+                                followers = flw + 'k'
+                            } else {
+                                followers = flw + '.' + followers[followers.length-6] + 'M'
+                            }
+                        } else if (followers.length > 3 && followers.length <= 6) {
                             followers = followers.split('');
 
                             var flw = '';
