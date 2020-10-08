@@ -1749,7 +1749,7 @@ form .label {
 }
 .article_details.article_details_news.full .la-block-content__editable--cite {
     position: relative;
-    background: #fff;
+    background: transparent;
     padding: 6px 0px 6px 65px;
     margin: 18px 0px 18px 0px;
     font-size: 22px;
@@ -1888,7 +1888,7 @@ form .label {
 }
 .article_details.article_details_news.full .cite-2-line .la-block-content__editable--cite {
     position: relative;
-    background: #fff;
+    background: transparent;
     margin: 48px auto;
     font-size: 24px;
     line-height: 1.5;
