@@ -33,8 +33,9 @@ jQuery(function ($) {
         e.stopPropagation();
         e.preventDefault();
 
+        
         var el = $(this).attr('href').split('#');
-        $('body,html').stop().animate({scrollTop: ($(`[data-anchor=${el[1]}]`).offset().top - 51)}, 1000);
+        $('body,html').stop().animate({scrollTop: ($(`#${el[1]}`).offset().top - 55)}, 1000);
 
         if ($('.custom-top-menu-wrapper ul').hasClass('active')) {
             $('.custom-top-menu-wrapper ul').stop().slideUp().removeClass('active');
