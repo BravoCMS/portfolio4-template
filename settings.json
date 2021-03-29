@@ -2,5 +2,6 @@
     "image": "@settings/image.json",
     "page": "@settings/page.json",
     "scheme": "@settings/scheme.json",
+    "file": "@settings/file.json",
     "customization": "@settings/customization.json"
 }

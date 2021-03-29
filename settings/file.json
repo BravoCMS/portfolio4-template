@@ -1,0 +1,53 @@
+{
+    "page_text": {
+        "file": "/text.tpl",
+        "options": {
+            "default": {
+                "name": "Универсальный редактор",
+                "file": "/text.tpl",
+                "image": "/assets/image/editor_module.png"
+            }
+        },
+        "order": 1
+    },
+    "page_albums": {
+        "file": "/photo_albums.tpl",
+        "options": {
+            "default": {
+                "name": "Фотоальбомы",
+                "file": "/photo_albums.tpl",
+                "image": "/assets/image/photo_albums.png"
+            }
+        },
+        "order": 3
+    },
+    "page_articles": {
+        "file": "/articles.tpl",
+        "options": {
+            "default": {
+                "name": "Блог",
+                "file": "/articles.tpl",
+                "image": "/assets/image/blog.png"
+            }
+        },
+        "order": 2
+    },
+    "page_photogallery": {
+        "is_active": 0
+    },
+    "page_brands": {
+        "is_active": 0
+    },
+    "page_events": {
+        "is_active": 0
+    },
+    "page_contacts": {
+        "is_active": 0
+    },
+    "blog_article": {
+        "is_active": 0
+    },
+    "event": {
+        "is_active": 0
+    }
+}
