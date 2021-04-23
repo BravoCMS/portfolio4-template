@@ -140,10 +140,15 @@ jQuery(function ($) {
             $('.to-the-top').fadeIn();
         }
         
+
+        // console.log($('.article_details.text .lb-container:first-child .img-list'));
+
         if ($('.article_details.text .lb-container:first-child .img-list').length) {
+
+            var _src = $('.article_details.text .lb-container:first-child .img-list img').attr("src").replace("_thumbnail", "");
             $('.article_details.text').before(
                     '<div class="cover-24 fullscreen-cover article_details_cover" data-bg-type="image" data-cover-id="24">' +
-                    '<div class="cover-image" data-bg-align="50% 50%" style="background-image: url(' + $('.article_details.text .lb-container:first-child .img-list img').attr("src-original") + ')"><img src="' + $('.article_details.text .lb-container:first-child .img-list img').attr("src-original") + '" /></div>' +
+                    '<div class="cover-image" data-bg-align="50% 50%" style="background-image: url(' + _src + ')"><img src="' + _src + '" /></div>' +
                     '</div>'
                     );
 
